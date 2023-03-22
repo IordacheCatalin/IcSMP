@@ -1,7 +1,19 @@
+using IcSMP.DataContext;
+using IcSMP.Repositories;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<IcSMPDataContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
+
+
+builder.Services.AddTransient<IcSMPDataContext, IcSMPDataContext>();
+builder.Services.AddTransient<CategoriesRepository, CategoriesRepository>();
+builder.Services.AddTransient<ClientsRepository, ClientsRepository>();
 
 var app = builder.Build();
 
