@@ -41,9 +41,20 @@ namespace IcSMP.Repositories
 
         public void Update(CategoryModel category)
         {
-
             _context.Category.Update(category);
             _context.SaveChanges();
+        }
+
+        //DELETE SECTION
+
+        public void Delete(int id)
+        {
+            CategoryModel category = GetCatagoryById(id);
+            if(category != null)
+            {
+                _context.Category.Remove(category);
+                _context.SaveChanges();
+            }           
         }
     }
 }

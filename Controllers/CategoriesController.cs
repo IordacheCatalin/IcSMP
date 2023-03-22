@@ -59,5 +59,30 @@ namespace IcSMP.Controllers
 
             return RedirectToAction("Index");
         }
+
+        //DETAILS SECTION
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            CategoryModel category = _repository.GetCatagoryById(id);
+            return View("Details", category);
+        }
+
+        //DELETE SECTION
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            CategoryModel category = _repository.GetCatagoryById(id);
+            return View("Delete", category);
+        }
+
+
+        [HttpPost]
+        public IActionResult Delete(int id, IFormCollection collection)
+        {
+            _repository.Delete(id);
+            return RedirectToAction("Index");
+
+        }
     }
 }
