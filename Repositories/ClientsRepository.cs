@@ -18,6 +18,15 @@ namespace IcSMP.Repositories
             return _context.Client;
         }
 
+        //GET CODE FOR A CERTAIN ID
+
+        public ClientModel GetClientById(int id)
+        {
+            ClientModel client = _context.Client.Find(id);
+            return client;
+
+        }
+
         //ADD SECTION
 
         public void AddClient(ClientModel client)
@@ -25,6 +34,26 @@ namespace IcSMP.Repositories
 
             _context.Client.Add(client);
             _context.SaveChanges();
+        }
+
+        //UPDATE SECTION
+
+        public void Update(ClientModel client)
+        {
+            _context.Client.Update(client);
+            _context.SaveChanges();
+        }
+
+        //DELETE SECTION
+
+        public void Delete(int id)
+        {
+            ClientModel client = GetClientById(id);
+            if (client != null)
+            {
+                _context.Client.Remove(client);
+                _context.SaveChanges();
+            }
         }
     }
 }

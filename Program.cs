@@ -14,6 +14,8 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectio
 builder.Services.AddTransient<IcSMPDataContext, IcSMPDataContext>();
 builder.Services.AddTransient<CategoriesRepository, CategoriesRepository>();
 builder.Services.AddTransient<ClientsRepository, ClientsRepository>();
+builder.Services.AddTransient<SuppliersRepository, SuppliersRepository>();
+builder.Services.AddTransient<CouriersRepository, CouriersRepository>();
 
 var app = builder.Build();
 

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<IcSMP.Models.ClientModel>
+﻿@model IEnumerable<IcSMP.Models.SupplierModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -17,16 +17,13 @@
                 @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FirstName)
+                @Html.DisplayNameFor(model => model.CompanyName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LastName)
+                @Html.DisplayNameFor(model => model.ContactName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdentificationNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsPrivatePerson)
+                @Html.DisplayNameFor(model => model.ContactTitle)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.City)
@@ -50,6 +47,9 @@
                 @Html.DisplayNameFor(model => model.Phone)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.BankAccount)
             </th>
             <th></th>
@@ -62,16 +62,13 @@
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
+                @Html.DisplayFor(modelItem => item.CompanyName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LastName)
+                @Html.DisplayFor(modelItem => item.ContactName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdentificationNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsPrivatePerson)
+                @Html.DisplayFor(modelItem => item.ContactTitle)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.City)
@@ -93,6 +90,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.BankAccount)

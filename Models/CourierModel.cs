@@ -6,11 +6,11 @@ namespace IcSMP.Models
     public class CourierModel
     {
         [Key]
-        public int id { get; set; }
+        public int Id { get; set; }
 
         public string CourierName { get; set; }
 
 
-        public string DescriptionName { get; set; }
+        public string Description { get; set; }
     }
 }

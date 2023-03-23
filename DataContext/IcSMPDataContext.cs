@@ -10,14 +10,14 @@ namespace IcSMP.DataContext
         public DbSet<CategoryModel> Category { get; set; }
 
         public DbSet<ClientModel> Client { get; set; }
-        
 
-        //public DbSet<CourierModel> Couriers { get; set; }
+
+        public DbSet<CourierModel> Courier { get; set; }
 
         //public DbSet<OrderModel> Orders { get; set; }
 
         //public DbSet<ProductModel> Products { get; set; }
 
-        //public DbSet<SupplierModel> Suppliers { get; set; }
+        public DbSet<SupplierModel> Supplier { get; set; }
     }
 }

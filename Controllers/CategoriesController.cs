@@ -1,7 +1,6 @@
 ﻿using IcSMP.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using IcSMP.Models;
-using System.Globalization;
 
 namespace IcSMP.Controllers
 {
