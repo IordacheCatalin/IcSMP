@@ -16,6 +16,7 @@ builder.Services.AddTransient<CategoriesRepository, CategoriesRepository>();
 builder.Services.AddTransient<ClientsRepository, ClientsRepository>();
 builder.Services.AddTransient<SuppliersRepository, SuppliersRepository>();
 builder.Services.AddTransient<CouriersRepository, CouriersRepository>();
+builder.Services.AddTransient<ProductsRepository, ProductsRepository>();
 
 var app = builder.Build();
 
