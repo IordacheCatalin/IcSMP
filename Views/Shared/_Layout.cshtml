@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="~/css/SiteStructure.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/TextColor.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/IcSMP.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/View.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/font-awesome/css/all.css"/>
 </head>
 <body>
     <header>
@@ -19,29 +21,40 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <img src="./Asset/Catalin-logo1.png" alt="company logo"/>
+                    <img src="./Asset/Catalin-logo1.png" alt="company logo" />
                     <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">IcSMP</a>
-                    <ul class="navbar-nav flex-grow-1 justify-content-center nav-bar-spacing">                        
-                        <li class="nav-item margin-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    <ul class="navbar-nav flex-grow-1 justify-content-center nav-bar-spacing">
+                        <li class="nav-item margin-item">                            
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                                <i class="fa-solid fa-house-user"></i> Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Categories" asp-action="Index">Categories</a>
+                            <a class="nav-link" asp-area="" asp-controller="Categories" asp-action="Index">
+                                <i class="fa-solid fa-folder-tree"></i> 
+                                 Categories</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Clients" asp-action="Index">Clients Db</a>
+                            <a class="nav-link" asp-area="" asp-controller="Clients" asp-action="Index">
+                                <i class="fa-solid fa-person-circle-plus"></i> 
+                                Clients Db</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Suppliers" asp-action="Index">Suppliers</a>
+                            <a class="nav-link" asp-area="" asp-controller="Suppliers" asp-action="Index">
+                                <i class="fa-solid fa-box-open"></i> 
+                                Suppliers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Couriers" asp-action="Index">Logistics</a>
+                            <a class="nav-link" asp-area="" asp-controller="Couriers" asp-action="Index">
+                                <i class="fa-solid fa-truck-front"></i> 
+                                Logistics</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">
+                                <i class="fa-solid fa-users-gear"></i> 
+                                About Us</a>
                         </li>
                     </ul>
-                    
+
                 </div>
             </div>
         </nav>
@@ -49,7 +62,6 @@
     <div class="container">
 
         <main role="main" class="pb-3">
-
             @RenderBody()
 
         </main>

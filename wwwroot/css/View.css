@@ -1,0 +1,8 @@
+﻿.data-container {
+    display: flex;
+    flex-direction: column;
+ }
+
+.create-btn {
+    max-width: 150px; 
+  }

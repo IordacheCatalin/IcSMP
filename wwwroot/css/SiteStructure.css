@@ -1,4 +1,5 @@
 ﻿.nav-bar-spacing {
+    flex-wrap:wrap;
     gap: 20px;
 }
 .navbar, .footer-bar-decoration {

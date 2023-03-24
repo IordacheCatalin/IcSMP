@@ -16,7 +16,7 @@ namespace IcSMP.DataContext
 
         //public DbSet<OrderModel> Orders { get; set; }
 
-        //public DbSet<ProductModel> Products { get; set; }
+        public DbSet<ProductModel> Product { get; set; }
 
         public DbSet<SupplierModel> Supplier { get; set; }
     }

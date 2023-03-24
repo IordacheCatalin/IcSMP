@@ -7,6 +7,7 @@
 
 .container-fluid {
     background-color: black;
+    border-radius: 6px;
 }
 
 
@@ -15,12 +16,12 @@ a.navbar-brand, a.nav-link {
     text-decoration: none;
 }
 
-a.navbar-brand:hover, a.nav-link:hover {
-    transition: 0.4s;
-    color: #0591AF;
-    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
-    border-radius: 6px;
-}
+    a.navbar-brand:hover, a.nav-link:hover {
+        transition: 0.4s;
+        color: #0591AF;
+        box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+        border-radius: 6px;
+    }
 
 .custom-toggler .navbar-toggler-icon {
     margin-left: -15px;
@@ -28,3 +29,19 @@ a.navbar-brand:hover, a.nav-link:hover {
     height: 25px;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='2.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
+
+.btn-custom {
+    background-color: black;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 0px 5px 0px;
+}
+
+    .btn-custom:hover {
+        transition: 0.4s;
+        color: #0591AF;
+        box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+        border-radius: 6px;
+    }

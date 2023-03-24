@@ -4,6 +4,7 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="data-container">
 
 <h1>Index</h1>
 
@@ -13,9 +14,9 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Id)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.FirstName)
             </th>
@@ -58,9 +59,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Id)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
             </td>
@@ -106,3 +107,4 @@
 }
     </tbody>
 </table>
+</div>
