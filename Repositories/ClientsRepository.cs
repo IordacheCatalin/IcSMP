@@ -31,7 +31,7 @@ namespace IcSMP.Repositories
 
         public void AddClient(ClientModel client)
         {
-
+            client.Id = new();
             _context.Client.Add(client);
             _context.SaveChanges();
         }

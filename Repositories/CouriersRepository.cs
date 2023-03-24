@@ -31,6 +31,7 @@ namespace IcSMP.Repositories
 
         public void AddCourier(CourierModel courier)
         {
+            courier.Id = new();
             _context.Courier.Add(courier);
             _context.SaveChanges();
         }

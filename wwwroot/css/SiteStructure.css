@@ -20,14 +20,28 @@
     margin-left:-210px;
 }
 
-@media only screen and (max-width: 600px) {
-    .navbar {
-        margin: 10px 10px 0px 10px;
+@media only screen and (max-width: 1200px) {
+    .logo-nav {
+        display: none;
     }
+
     .footer-bar-decoration {
-        width: calc(100% - 20px);
-        margin: 10px 10px 0px 10px;
-        bottom: 5px;
+        width: 100%;
+    }
+    .margin-item {
+        margin-left: 0px;
     }
 }
+
+    @media only screen and (max-width: 600px) {
+        .navbar {
+            margin: 10px 10px 0px 10px;
+        }
+
+        .footer-bar-decoration {
+            width: calc(100% - 20px);
+            margin: 10px 10px 0px 10px;
+            bottom: 5px;
+        }
+    }
 

@@ -32,7 +32,7 @@ namespace IcSMP.Repositories
 
         public void AddCategory(CategoryModel category)
         {
-
+            category.Id = new(); 
             _context.Category.Add(category);
             _context.SaveChanges();
         }

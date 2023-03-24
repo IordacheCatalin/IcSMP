@@ -31,6 +31,7 @@ namespace IcSMP.Repositories
 
         public void AddSupplier(SupplierModel supplier)
         {
+            supplier.Id = new();
             _context.Supplier.Add(supplier);
             _context.SaveChanges();
         }
