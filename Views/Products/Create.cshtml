@@ -42,6 +42,7 @@
                 <label asp-for="CategoryId" class="control-label"></label>
                 @*<input asp-for="CategoryId" class="form-control" />
                 <span asp-validation-for="CategoryId" class="text-danger"></span>*@
+                @*<select name="CategoryId" class="form-control" asp-items="@ViewBag.dataCategory"></select>*@ @*------ Varianta cu Select list*@
                 @Html.DropDownList("CategoryId", new SelectList(ViewBag.dataCategory, "Id" , "Name"),new{ style = "width: 350px;"})
             </div>
             <div class="form-group">
@@ -49,6 +50,7 @@
                 @*<input asp-for="SupplierId" class="form-control" />
                 <span asp-validation-for="SupplierId" class="text-danger"></span>*@
                 @Html.DropDownList("SupplierId", new SelectList(ViewBag.data, "Id" , "CompanyName"),new{ style = "width: 350px;"})
+                @*<select name="SupplierId" class="form-control" asp-items="@ViewBag.data"></select>*@ @*------ Varianta cu Select list*@
             </div>          
             <div class="form-group">
                 <label asp-for="BuyPrice" class="control-label"></label>

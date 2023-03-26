@@ -1,25 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace IcSMP.Models
+namespace IcSMP.ViewModels
 {
-    public class ProductModel
+    public class ProductViewModel
     {
-        [Key]
         public int Id { get; set; }
-        [StringLength(50, ErrorMessage = "Maximum number of characters is 50!")]
+
         public string Name { get; set; }
-        
+
         public int ProductNumber { get; set; }
 
         public int Caen { get; set; }
 
         public string Description { get; set; }
 
+
+        public string Supplier { get; set; }
         public int SupplierId { get; set; }
 
-    
+
+        public string Category { get; set; }
         public int CategoryId { get; set; }
 
         public decimal BuyPrice { get; set; }
