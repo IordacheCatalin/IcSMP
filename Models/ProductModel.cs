@@ -16,17 +16,17 @@ namespace IcSMP.Models
 
         public string Description { get; set; }
 
-        [ForeignKey("Supplier")]
+       
         public int SupplierId { get; set; }
 
-        [ForeignKey("Category")]
+    
         public int CategoryId { get; set; }
 
-        public double BuyPrice { get; set; }
+        public decimal BuyPrice { get; set; }
 
-        public double SellPrice { get; set; }
+        public decimal SellPrice { get; set; }
 
-        public double SellPriceVat { get; set; }
+        public decimal SellPriceVat { get; set; }
 
     }
 }

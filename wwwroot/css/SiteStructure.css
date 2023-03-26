@@ -20,6 +20,28 @@
     margin-left:-180px;
 }
 
+.table-reverse {
+    transform: rotate(180deg);
+}
+
+    .table-reverse tr {
+        transform: rotate(-180deg);
+    }
+
+.action-link {
+    position: relative;
+    left: -18px;
+    top: 0px;
+    opacity:0;
+}
+.action-link-space{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+}
+
+
+
 @media only screen and (max-width: 1200px) {
     .logo-nav {
         display: none;

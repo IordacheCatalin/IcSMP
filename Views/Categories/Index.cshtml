@@ -1,20 +1,21 @@
 ﻿@model IEnumerable<IcSMP.Models.CategoryModel>
 
 @{
-    ViewData["Title"] = "Categories View";
+    ViewData["Title"] = "Categories";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="data-container">
-    <h1>Categories View</h1>
+    <h1>Categories</h1>
     <a asp-action="Create" class="btn-custom create-btn">
         <i class="fa-regular fa-square-plus"></i>
-        Create New</a>
+        Create New
+    </a>
 
     <table class="table">
         <thead>
             <tr>
-               @* <th>
-                    @Html.DisplayNameFor(model => model.Id)
+                @* <th>
+                @Html.DisplayNameFor(model => model.Id)
                 </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.Name)
@@ -25,7 +26,7 @@
                 <th></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="table-reverse">
             @foreach (var item in Model)
             {
                 <tr>
@@ -38,19 +39,26 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Description)
                     </td>
-                    <td>
-                        <span>
-                            <span class="btn-custom create-btn">
-                                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  })
-                            </span>
-                            <span>
-                                @Html.ActionLink("Details", "Details", new { id=item.Id })
-                            </span>
-                            <span>
-                                @Html.ActionLink("Delete", "Delete", new { id=item.Id  })
-                            </span>
+                    <td class="action-link-space">
+                        <span class="action-icon-hover">
+                            <i class="fa-solid fa-pen-to-square action-icon"></i>
+                                <span class="action-link">
+                                    @Html.ActionLink("...", "Edit", new {  id=item.Id  })
+                                </span>
+
                         </span>
-                       
+                        <span class="action-icon-hover">
+                            <i class="fa-solid fa-circle-info action-icon"></i>
+                                <span class="action-link">
+                                @Html.ActionLink("...", "Details", new { id=item.Id })
+                                </span>
+                            </span>
+                        <span class="action-icon-hover">
+                            <i class="fa-solid fa-trash action-icon"></i>
+                                <span class="action-link">
+                                @Html.ActionLink("...", "Delete", new { id=item.Id  })
+                                </span>
+                            </span>
                     </td>
                 </tr>
             }

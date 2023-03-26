@@ -1,6 +1,7 @@
 ﻿using IcSMP.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using IcSMP.Models;
+using IcSMP.ViewModels;
 
 namespace IcSMP.Controllers
 {
@@ -78,6 +79,6 @@ namespace IcSMP.Controllers
         {
             _supplierRepository.Delete(id);
             return RedirectToAction("Index");
-        }
+        }        
     }
 }

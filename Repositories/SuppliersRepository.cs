@@ -1,5 +1,6 @@
 ﻿using IcSMP.DataContext;
 using IcSMP.Models;
+using IcSMP.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace IcSMP.Repositories
@@ -54,6 +55,6 @@ namespace IcSMP.Repositories
                 _context.Supplier.Remove(supplier);
                 _context.SaveChanges();
             }
-        }
+        }        
     }
 }

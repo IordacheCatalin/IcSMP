@@ -45,3 +45,8 @@ a.navbar-brand, a.nav-link {
         box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
         border-radius: 6px;
     }
+
+.action-icon-hover:hover .action-icon{
+    transition: 0.4s;
+    color: #0591AF;
+}

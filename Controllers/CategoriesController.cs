@@ -1,6 +1,7 @@
 ﻿using IcSMP.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using IcSMP.Models;
+using IcSMP.ViewModels;
 
 namespace IcSMP.Controllers
 {
@@ -83,5 +84,6 @@ namespace IcSMP.Controllers
             return RedirectToAction("Index");
 
         }
+           
     }
 }

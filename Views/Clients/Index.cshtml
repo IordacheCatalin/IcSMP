@@ -1,16 +1,16 @@
 ﻿@model IEnumerable<IcSMP.Models.ClientModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Clients";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="data-container">
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<h1>Clients</h1>
+    <a asp-action="Create" class="btn-custom create-btn">
+        <i class="fa-regular fa-square-plus"></i>
+        Create New
+    </a>
 <table class="table">
     <thead>
         <tr>
@@ -56,7 +56,7 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+        <tbody class="table-reverse">
 @foreach (var item in Model) {
         <tr>
             @*<td>
