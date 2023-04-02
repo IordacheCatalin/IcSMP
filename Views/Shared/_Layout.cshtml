@@ -10,57 +10,70 @@
     <link rel="stylesheet" href="~/css/TextColor.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/IcSMP.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/View.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/font-awesome/css/all.css"/>
+    <link rel="stylesheet" href="~/font-awesome/css/all.css" />
 </head>
 <body>
+    @if (User.Identity.IsAuthenticated)
+                {
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm mb-3 nav-bar-decoration">
+         <nav class="navbar navbar-expand-sm navbar-toggleable-sm mb-3 nav-bar-decoration">            
             <div class="container-fluid">
                 <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <img src="./Asset/Catalin-logo1.png" alt="company logo" class="logo-nav"/>
-                    <a class="nav-link puls" asp-area="" asp-controller="Home" asp-action="Index">
-                        <i class="fa-solid fa-house-user"></i> 
-                        IcSMP</a>
-                    <ul class="navbar-nav flex-grow-1 justify-content-center nav-bar-spacing">
-                       <li class="nav-item margin-item">
-                            <a class="nav-link" asp-area="" asp-controller="Categories" asp-action="Index">
-                                <i class="fa-solid fa-folder-tree"></i> 
-                                 Categories</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Products" asp-action="Index">
-                                <i class="fa-solid fa-hand-holding-dollar"></i>
-                                Stock</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Clients" asp-action="Index">
-                                <i class="fa-solid fa-person-circle-plus"></i> 
-                                Clients Db</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Suppliers" asp-action="Index">
-                                <i class="fa-solid fa-box-open"></i> 
-                                Suppliers</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Couriers" asp-action="Index">
-                                <i class="fa-solid fa-truck-front"></i> 
-                                Logistics</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">
-                                <i class="fa-solid fa-users-gear"></i> 
-                                About Us</a>
-                        </li>
-                    </ul>
+                   <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <img src="./Asset/Catalin-logo1.png" alt="company logo" class="logo-nav" />
+                        <a class="nav-link puls" asp-area="" asp-controller="Home" asp-action="Index">
+                            <i class="fa-solid fa-house-user"></i>
+                            IcSMP
+                        </a>
+                        <ul class="navbar-nav flex-grow-1 justify-content-center nav-bar-spacing">
+                            <li class="nav-item margin-item">
+                                <a class="nav-link" asp-area="" asp-controller="Categories" asp-action="Index">
+                                    <i class="fa-solid fa-folder-tree"></i>
+                                    Categories
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Products" asp-action="Index">
+                                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                                    Stock
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Clients" asp-action="Index">
+                                    <i class="fa-solid fa-person-circle-plus"></i>
+                                    Clients Db
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Suppliers" asp-action="Index">
+                                    <i class="fa-solid fa-box-open"></i>
+                                    Suppliers
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Couriers" asp-action="Index">
+                                    <i class="fa-solid fa-truck-front"></i>
+                                    Logistics
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">
+                                    <i class="fa-solid fa-users-gear"></i>
+                                    About Us
+                                </a>
+                            </li>
+                        </ul>
+                        <a class="nav-link puls" asp-area="" asp-controller="AccountAuth0" asp-action="Logout">
+                            <i class="fa-solid fa-power-off"></i>
+                            Log out
+                        </a>
 
+                    </div>
                 </div>
-            </div>
-        </nav>
+          </nav>       
     </header>
     <div class="container">
 
@@ -69,6 +82,39 @@
 
         </main>
     </div>
+    }
+    else
+    {<header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm mb-3 nav-bar-decoration">
+            <div class="container-fluid login-start">
+               <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">                    
+                        <div class="nav-link puls login-start">
+                        IcSMP
+                    </div>               
+                 </div>
+               <div>
+                   <h1>Iordache Catalin Stocks Management Program</h1>
+               </div>
+            </div>
+        </nav>
+      </header>
+        <div class="container login-start">
+            <button>
+                <img src="./Asset/Catalin-logo1.png" alt="company logo"/>
+                <div>
+                    <a class="puls" asp-area="" asp-controller="AccountAuth0" asp-action="Login">
+                        <i class="fa-solid fa-right-to-bracket"> </i>
+                        Please login
+                    </a>
+                </div>               
+            </button>             
+
+            <main role="main" class="pb-3" style="display:none;">
+                @RenderBody()
+
+            </main>
+        </div>
+    }
 
     <footer class="text-muted footer-bar-decoration">
         <div class="container">

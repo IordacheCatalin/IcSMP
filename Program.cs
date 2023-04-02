@@ -2,6 +2,7 @@ using IcSMP.DataContext;
 using IcSMP.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Auth0.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +19,16 @@ builder.Services.AddTransient<SuppliersRepository, SuppliersRepository>();
 builder.Services.AddTransient<CouriersRepository, CouriersRepository>();
 builder.Services.AddTransient<ProductsRepository, ProductsRepository>();
 
+// Auth0 configuration
+builder.Services.AddAuth0WebAppAuthentication(options =>
+     {
+         options.Domain = builder.Configuration["Auth0:Domain"];
+         options.ClientId = builder.Configuration["Auth0:ClientId"];
+     });
+
 var app = builder.Build();
+
+app.UseAuthentication();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

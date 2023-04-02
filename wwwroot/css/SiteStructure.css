@@ -39,17 +39,30 @@
     justify-content:flex-end;
     align-items:center;
 }
+.container-fluid.login-start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    color:white;
+}
+    .container-fluid.login-start .navbar-collapse{
+        flex-grow:0;
+    }
 
-
-
-@media only screen and (max-width: 1200px) {
-    .logo-nav {
+.container.login-start{
+    width:100%;
+    height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+   
+    @media only screen and (max-width: 1200px) {
+        .logo-nav {
         display: none;
     }
 
-    .footer-bar-decoration {
-        width: 100%;
-    }
     .margin-item {
         margin-left: 0px;
     }
