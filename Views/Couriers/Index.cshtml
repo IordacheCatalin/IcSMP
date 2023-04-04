@@ -37,11 +37,27 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.Id  })
-            </td>
+                    <td class="action-link-space">
+                        <span class="action-icon-hover">
+                            <i class="fa-solid fa-pen-to-square action-icon"></i>
+                            <span class="action-link">
+                                @Html.ActionLink("...", "Edit", new {  id=item.Id  })
+                            </span>
+
+                        </span>
+                        <span class="action-icon-hover">
+                            <i class="fa-solid fa-circle-info action-icon"></i>
+                            <span class="action-link">
+                                @Html.ActionLink("...", "Details", new { id=item.Id })
+                            </span>
+                        </span>
+                        <span class="action-icon-hover">
+                            <i class="fa-solid fa-trash action-icon"></i>
+                            <span class="action-link">
+                                @Html.ActionLink("...", "Delete", new { id=item.Id  })
+                            </span>
+                        </span>
+                    </td>
         </tr>
 }
     </tbody>

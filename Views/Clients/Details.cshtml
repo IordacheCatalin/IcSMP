@@ -4,11 +4,10 @@
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>Details</h1>
+<div class="data-container">
+<h1>Client Details</h1>
 
 <div>
-    <h4>ClientModel</h4>
     <hr />
     <dl class="row">
         @*<dt class = "col-sm-2">
@@ -97,7 +96,12 @@
         </dd>
     </dl>
 </div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    <a asp-action="Index">Back to List</a>
+    <div class="details-btn">
+        <button type="button" class="btn btn-primary">
+            <a asp-action="Index">Back to List</a>
+        </button>
+        <button type="button" class="btn btn-primary">
+            <a asp-action="Index">@Html.ActionLink("Edit", "Edit", new { id = Model.Id })</a>
+        </button>
+    </div>
 </div>

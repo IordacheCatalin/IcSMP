@@ -24,24 +24,33 @@
                 <th>
                     @Html.DisplayNameFor(model => model.ProductNumber)
                 </th>
-                <th>
+                <th class="hide-1080px">
                     @Html.DisplayNameFor(model => model.Caen)
                 </th>
-                <th>
+                <th class="hide-1080px">
                     @Html.DisplayNameFor(model => model.Description)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.SupplierId)
-                    @Html.DisplayNameFor(model => model.Supplier)                    
+                    <span class="hide-1350px">
+                        @Html.DisplayNameFor(model => model.SupplierId)
+                    </span>
+                    <span class="hide-600px">
+                        @Html.DisplayNameFor(model => model.Supplier)
+                    </span>                                      
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.CategoryId)
-                    @Html.DisplayNameFor(model => model.Category)                    
+                    <span class="hide-1350px">
+                        @Html.DisplayNameFor(model => model.CategoryId)
+                    </span>
+                    <span class="hide-600px">
+                        @Html.DisplayNameFor(model => model.Category)
+                    </span>
+                                       
                 </th>
-                <th>
+                <th class="hide-600px">
                     @Html.DisplayNameFor(model => model.BuyPrice)
                 </th>
-                <th>
+                <th class="hide-1350px">
                     @Html.DisplayNameFor(model => model.SellPrice)
                 </th>
                 <th>
@@ -63,33 +72,60 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.ProductNumber)
                     </td>
-                    <td>
+                    <td class="hide-1080px">
                         @Html.DisplayFor(modelItem => item.Caen)
                     </td>
-                    <td>
+                    <td class="hide-1080px">
                         @Html.DisplayFor(modelItem => item.Description)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.SupplierId)
-                        @Html.DisplayFor(modelItem => item.Supplier)                        
+                        <span class="hide-1350px">
+                            @Html.DisplayFor(modelItem => item.SupplierId)
+                        </span>
+                        <span class="hide-600px">
+                            @Html.DisplayFor(modelItem => item.Supplier)
+                        </span>
+                        
+                                               
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.CategoryId)
-                        @Html.DisplayFor(modelItem => item.Category)
+                        <span class="hide-1350px">
+                            @Html.DisplayFor(modelItem => item.CategoryId)
+                        </span>
+                        <span class="hide-600px">
+                            @Html.DisplayFor(modelItem => item.Category)
+                        </span>                   
+                        
                     </td>
-                    <td>
+                    <td class="hide-600px">
                         @Html.DisplayFor(modelItem => item.BuyPrice)
                     </td>
-                    <td>
+                    <td class="hide-1350px">
                         @Html.DisplayFor(modelItem => item.SellPrice)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.SellPriceVat)
                     </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
-                        @Html.ActionLink("Details", "Details", new { id=item.Id}) |
-                        @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+                    <td class="action-link-space">
+                        <span class="action-icon-hover">
+                            <i class="fa-solid fa-pen-to-square action-icon"></i>
+                            <span class="action-link">
+                                @Html.ActionLink("...", "Edit", new {  id=item.Id  })
+                            </span>
+
+                        </span>
+                        <span class="action-icon-hover">
+                            <i class="fa-solid fa-circle-info action-icon"></i>
+                            <span class="action-link">
+                                @Html.ActionLink("...", "Details", new { id=item.Id })
+                            </span>
+                        </span>
+                        <span class="action-icon-hover">
+                            <i class="fa-solid fa-trash action-icon"></i>
+                            <span class="action-link">
+                                @Html.ActionLink("...", "Delete", new { id=item.Id  })
+                            </span>
+                        </span>
                     </td>
                 </tr>
             }

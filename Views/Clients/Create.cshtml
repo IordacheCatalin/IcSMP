@@ -4,14 +4,13 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="data-container">
+<h1>Client Create</h1>
 
-<h1>Create</h1>
-
-<h4>ClientModel</h4>
 <hr />
-<div class="row">
+    <div class="row operations-container">
     <div class="col-md-4">
-        <form asp-action="Create">
+            <form asp-action="Create" class="form-design">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             @*<div class="form-group">
                 <label asp-for="Id" class="control-label"></label>
@@ -82,16 +81,16 @@
                 <label asp-for="BankAccount" class="control-label"></label>
                 <input asp-for="BankAccount" class="form-control" />
                 <span asp-validation-for="BankAccount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+            </div>        
+        <div class="form-group form-action">
+            <button type="button" class="btn btn-primary">
+                <a asp-action="Index">Back to List</a>
+            </button>
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

@@ -33,32 +33,66 @@
     left: -18px;
     top: 0px;
     opacity:0;
+
 }
-.action-link-space{
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
+.action-link-space {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex:1 1 auto;
+    white-space: nowrap;
 }
+.container {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    padding: 20px 50px 20px 50px;
+    margin: 0 auto;
+    max-width: 100%;
+ }
+
+.data-container{
+    gap:24px;
+}
+
+.operations-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
 .container-fluid.login-start {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:20px;
-    color:white;
+    gap: 20px;
+    color: white;
 }
-    .container-fluid.login-start .navbar-collapse{
-        flex-grow:0;
+ .container-fluid.login-start .navbar-collapse{
+       flex-grow:0;
     }
 
-.container.login-start{
-    width:100%;
-    height:80vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.container.login-start {
+    position:absolute;
+    width: 100%;
+    height: 78%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-   
-    @media only screen and (max-width: 1200px) {
+
+.text-center.welcome-page-start {
+    width: 100%;
+    height: 81.5vh;
+  }
+
+.text-opacity {
+    color: black;
+    padding-top:70px;
+}
+
+    @media only screen and (max-width: 1333px) {
         .logo-nav {
         display: none;
     }

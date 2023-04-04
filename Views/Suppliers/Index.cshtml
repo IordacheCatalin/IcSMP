@@ -20,38 +20,38 @@
             <th>
                 @Html.DisplayNameFor(model => model.CompanyName)
             </th>
-            <th>
+                <th class="hide-1350px">
                 @Html.DisplayNameFor(model => model.ContactName)
             </th>
-            <th>
+                <th class="hide-1480px">
                 @Html.DisplayNameFor(model => model.ContactTitle)
             </th>
-            <th>
+                <th class="hide-600px">
                 @Html.DisplayNameFor(model => model.City)
             </th>
-            <th>
+                <th class="hide-1080px">
                 @Html.DisplayNameFor(model => model.Street)
             </th>
-            <th>
+                <th class="hide-1080px">
                 @Html.DisplayNameFor(model => model.Number)
             </th>
-            <th>
+                <th class="hide-1250px">
                 @Html.DisplayNameFor(model => model.Zipcode)
             </th>
-            <th>
+                <th class="hide-1250px">
                 @Html.DisplayNameFor(model => model.Municipality)
             </th>
-            <th>
+                <th class="hide-600px">
                 @Html.DisplayNameFor(model => model.Country)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Phone)
             </th>
-            <th>
+                <th class="hide-600px">
                 @Html.DisplayNameFor(model => model.Email)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BankAccount)
+                <th class="hide-1080px">
+                    @Html.DisplayNameFor(model => model.BankAccount)
             </th>
             <th></th>
         </tr>
@@ -65,45 +65,60 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CompanyName)
             </td>
-            <td>
+            <td class="hide-1350px">
                 @Html.DisplayFor(modelItem => item.ContactName)
             </td>
-            <td>
+            <td class="hide-1480px">
                 @Html.DisplayFor(modelItem => item.ContactTitle)
             </td>
-            <td>
+                    <td class="hide-600px">
                 @Html.DisplayFor(modelItem => item.City)
             </td>
-            <td>
+            <td class="hide-1080px">
                 @Html.DisplayFor(modelItem => item.Street)
             </td>
-            <td>
+            <td class="hide-1080px">
                 @Html.DisplayFor(modelItem => item.Number)
             </td>
-            <td>
+                    <td class="hide-1250px">
                 @Html.DisplayFor(modelItem => item.Zipcode)
             </td>
-            <td>
+                    <td class="hide-1250px">
                 @Html.DisplayFor(modelItem => item.Municipality)
             </td>
-            <td>
+                    <td class="hide-600px">
                 @Html.DisplayFor(modelItem => item.Country)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
-            <td>
+                    <td class="hide-600px">
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
-            <td>
+            <td class="hide-1080px">
                 @Html.DisplayFor(modelItem => item.BankAccount)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })            
+                    <td class="action-link-space">
+                        <span class="action-icon-hover">
+                            <i class="fa-solid fa-pen-to-square action-icon"></i>
+                            <span class="action-link">
+                                @Html.ActionLink("...", "Edit", new {  id=item.Id  })
+                            </span>
 
-            </td>
+                        </span>
+                        <span class="action-icon-hover">
+                            <i class="fa-solid fa-circle-info action-icon"></i>
+                            <span class="action-link">
+                                @Html.ActionLink("...", "Details", new { id=item.Id })
+                            </span>
+                        </span>
+                        <span class="action-icon-hover">
+                            <i class="fa-solid fa-trash action-icon"></i>
+                            <span class="action-link">
+                                @Html.ActionLink("...", "Delete", new { id=item.Id  })
+                            </span>
+                        </span>
+                    </td>
         </tr>
 }
     </tbody>

@@ -42,3 +42,47 @@
         box-shadow: 0 0 0 0 rgba(5,145,175, 1);
     }
 }
+
+/*Hide div when screen shirnks*/
+
+@media only screen and (max-width: 1480px) {
+    .hide-1480px {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    .hide-1350px {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .hide-1250px {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .hide-1080px {
+        display: none;
+    }
+    .container {
+        padding: 10px 30px 10px 30px;
+    }
+    .data-container{
+        padding:10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .hide-600px {
+        display: none;
+    }
+    .container {
+        padding: 5px 12px 5px 12px;
+    }
+    .data-container {
+        padding: 5px;
+    }
+}
