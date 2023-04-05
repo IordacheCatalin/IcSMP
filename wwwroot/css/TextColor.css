@@ -20,17 +20,27 @@
         font-size: 30px;
     }
 
-a.navbar-brand, a.nav-link {
+a.navbar-brand, a.nav-link,
+.footer-bar-decoration .footer-item {
     color: white;
     text-decoration: none;
 }
 
-    a.navbar-brand:hover, a.nav-link:hover {
+    a.navbar-brand:hover, a.nav-link:hover,
+    .footer-bar-decoration .footer-item:hover {
         transition: 0.4s;
         color: #0591AF;
         box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
         border-radius: 6px;
     }
+
+.footer-bar-decoration .footer-item {
+    padding: 5px 10px 5px 10px;
+}
+
+.footer-bar-decoration .container{
+    height: auto;
+}
 
 .custom-toggler .navbar-toggler-icon {
     width: 45px;
@@ -136,6 +146,20 @@ h1 {
     font-size: 14px;
     font-weight: 400;
     color: grey;
+}
+
+.text-opacity {
+    color: black;
+    padding-top: 70px;
+}
+
+.text-aboutus-page {
+    padding:15px;
+    text-align: justify;
+ }
+
+.data-container h3{
+    color:red;
 }
 
 @media only screen and (max-width: 600px) {

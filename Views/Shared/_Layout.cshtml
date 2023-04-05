@@ -15,15 +15,15 @@
 </head>
 <body>
     @if (User.Identity.IsAuthenticated)
-                {
-    <header>
-         <nav class="navbar navbar-expand-sm navbar-toggleable-sm mb-3 nav-bar-decoration">            
-            <div class="container-fluid">
-                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                   <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+    {
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm mb-3 nav-bar-decoration">
+                <div class="container-fluid">
+                    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                         <img src="./Asset/Catalin-logo1.png" alt="company logo" class="logo-nav" />
                         <a class="nav-link puls" asp-area="" asp-controller="Home" asp-action="Index">
                             <i class="fa-solid fa-house-user"></i>
@@ -74,31 +74,32 @@
 
                     </div>
                 </div>
-          </nav>       
-    </header>
-    <div class="container">
+            </nav>
+        </header>
+        <div class="container">
 
-        <main role="main" class="pb-3">
-            @RenderBody()
+            <main role="main" class="pb-3">
+                @RenderBody()
 
-        </main>
-    </div>
+            </main>
+        </div>
     }
     else
-    {<header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm mb-3 nav-bar-decoration">
-            <div class="container-fluid login-start">
-               <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">                    
+    {
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm mb-3 nav-bar-decoration">
+                <div class="container-fluid login-start">
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                         <div class="nav-link puls login-start">
-                        IcSMP
-                    </div>               
-                 </div>
-               <div>
-                   <h1>Iordache Catalin Stocks Management Program</h1>
-               </div>
-            </div>
-        </nav>
-      </header>
+                            IcSMP
+                        </div>
+                    </div>
+                    <div>
+                        <h1>Iordache Catalin Stocks Management Program</h1>
+                    </div>
+                </div>
+            </nav>
+        </header>
         <div class="container login-start">
             <button>
                 <i class="fa-solid fa-computer" style="font-size:200px"></i>
@@ -107,8 +108,8 @@
                         <i class="fa-solid fa-right-to-bracket"> </i>
                         Please login
                     </a>
-                </div>               
-            </button>             
+                </div>
+            </button>
 
             <main role="main" class="pb-3" style="display:none;">
                 @RenderBody()
@@ -119,7 +120,11 @@
 
     <footer class="text-muted footer-bar-decoration">
         <div class="container">
-            &copy; 2023 - IcSMP - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <span class="footer-item">
+                &copy; 2023 - IcSMP -
+            </span>
+            <a class="footer-item"  asp-area="" asp-controller="Home" asp-action="Privacy">About Us</a>
+            
         </div>
     </footer>
 

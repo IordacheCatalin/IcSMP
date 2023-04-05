@@ -13,5 +13,24 @@ body {
   
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+  }
 
+::-webkit-scrollbar-track {
+    background: black;
+    height: 20%;
+    padding: 20px;
+    border-radius: 50px;
+    width:calc(100% - 50px);
+}
 
+::-webkit-scrollbar-thumb {
+    background: #0591af;
+    border-radius: 50px;
+    width: calc(100% - 50px);
+}
+
+  ::-webkit-scrollbar-thumb:hover {
+        background: #00343e;
+    }
