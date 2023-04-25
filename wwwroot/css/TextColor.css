@@ -31,6 +31,10 @@ a.nav-link:focus{
 color:white!important;
 }
 
+    a.nav-link:focus-visible {
+        border:2px solid red;
+    }
+
     a.nav-link:active {
         color:red;
     }
@@ -54,6 +58,10 @@ color:white!important;
     width: 45px;
     height: 25px;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='2.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler:focus.{
+    box-shadow:none!important;
 }
 
 .btn-custom {
@@ -171,6 +179,21 @@ h1 {
 
 .data-container h3 {
     color: red;
+}
+
+tr:hover {
+    background-color: #e2e2e2;
+    border-radius: 16px;
+}
+
+input[type="checkbox"]:checked {
+    outline: 2px solid #0591af;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+input[type="checkbox"]:not(:checked) {
+    outline: 2px solid black;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 @media only screen and (max-width: 600px) {

@@ -101,6 +101,10 @@
     margin:0 auto;
 }
 
+.display-none{
+    display:none;
+}
+
 @media only screen and (max-width: 1333px) {
     .logo-nav {
         display: none;

@@ -21,8 +21,11 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Name)
                 </th>
-                <th class="hide-600px>
+                <th class="hide-600px">
                     @Html.DisplayNameFor(model => model.ProductNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Buc)
                 </th>
                 <th class="hide-1080px">
                     @Html.DisplayNameFor(model => model.Caen)
@@ -31,7 +34,7 @@
                     @Html.DisplayNameFor(model => model.Description)
                 </th>
                 <th>
-                    <span class="hide-1350px">
+                    <span class="display-none">
                         @Html.DisplayNameFor(model => model.SupplierId)
                     </span>
                     <span class="hide-600px">
@@ -39,13 +42,12 @@
                     </span>                                      
                 </th>
                 <th>
-                    <span class="hide-1350px">
+                    <span class="display-none">
                         @Html.DisplayNameFor(model => model.CategoryId)
                     </span>
                     <span class="hide-600px">
                         @Html.DisplayNameFor(model => model.Category)
-                    </span>
-                                       
+                    </span>                                       
                 </th>
                 <th class="hide-600px">
                     @Html.DisplayNameFor(model => model.BuyPrice)
@@ -69,8 +71,11 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
-                    <td class="hide-600px>
+                    <td class="hide-600px">
                         @Html.DisplayFor(modelItem => item.ProductNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Buc)
                     </td>
                     <td class="hide-1080px">
                         @Html.DisplayFor(modelItem => item.Caen)
@@ -79,23 +84,20 @@
                         @Html.DisplayFor(modelItem => item.Description)
                     </td>
                     <td>
-                        <span class="hide-1350px">
+                        <span class="display-none">
                             @Html.DisplayFor(modelItem => item.SupplierId)
                         </span>
                         <span class="hide-600px">
                             @Html.DisplayFor(modelItem => item.Supplier)
-                        </span>
-                        
-                                               
+                        </span>                                                       
                     </td>
                     <td>
-                        <span class="hide-1350px">
+                        <span class="display-none">
                             @Html.DisplayFor(modelItem => item.CategoryId)
                         </span>
                         <span class="hide-600px">
                             @Html.DisplayFor(modelItem => item.Category)
-                        </span>                   
-                        
+                        </span>                                     
                     </td>
                     <td class="hide-600px">
                         @Html.DisplayFor(modelItem => item.BuyPrice)
@@ -112,7 +114,6 @@
                             <span class="action-link">
                                 @Html.ActionLink("...", "Edit", new {  id=item.Id  })
                             </span>
-
                         </span>
                         <span class="action-icon-hover">
                             <i class="fa-solid fa-circle-info action-icon"></i>

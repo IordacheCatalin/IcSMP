@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -12,8 +13,10 @@ namespace IcSMP.Models
         public string Name { get; set; }
         
         public int ProductNumber { get; set; }
-
-        public int Caen { get; set; }
+        [DisplayName("Caen Code")]
+        [Required(ErrorMessage = "Square Feet is Required")]
+        //[Range(0, int.MaxValue, ErrorMessage = "Square Feet must be a positive number")]
+        public long Caen { get; set; }
 
         public string Description { get; set; }
 
@@ -27,6 +30,8 @@ namespace IcSMP.Models
         public decimal SellPrice { get; set; }
 
         public decimal SellPriceVat { get; set; }
+
+        public int Buc { get; set; }
 
     }
 }

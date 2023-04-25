@@ -27,6 +27,11 @@
                     <span asp-validation-for="ProductNumber" class="text-danger"></span>
                 </div>
                 <div class="form-group">
+                    <label asp-for="Buc" class="control-label"></label>
+                    <input asp-for="Buc" class="form-control" />
+                    <span asp-validation-for="Buc" class="text-danger"></span>
+                </div>
+                <div class="form-group">
                     <label asp-for="Caen" class="control-label"></label>
                     <input asp-for="Caen" class="form-control" />
                     <span asp-validation-for="Caen" class="text-danger"></span>
@@ -60,11 +65,11 @@
                     <input asp-for="SellPrice" class="form-control" />
                     <span asp-validation-for="SellPrice" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                @*<div class="form-group">
                     <label asp-for="SellPriceVat" class="control-label"></label>
-                    <input asp-for="SellPriceVat" class="form-control" />
+                    <input asp-for="SellPriceVat" class="form-control" readonly/>
                     <span asp-validation-for="SellPriceVat" class="text-danger"></span>
-                </div>
+                </div>*@
                 <div class="form-group form-action">
                     <button type="button" class="btn btn-primary">
                         <a asp-action="Index">Back to List</a>

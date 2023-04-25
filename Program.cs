@@ -3,6 +3,7 @@ using IcSMP.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Auth0.AspNetCore.Authentication;
+using IcSMP.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,7 @@ builder.Services.AddTransient<ClientsRepository, ClientsRepository>();
 builder.Services.AddTransient<SuppliersRepository, SuppliersRepository>();
 builder.Services.AddTransient<CouriersRepository, CouriersRepository>();
 builder.Services.AddTransient<ProductsRepository, ProductsRepository>();
+builder.Services.AddTransient<IMethodsCalculation, MethodsCalculation>();
 
 // Auth0 configuration
 builder.Services.AddAuth0WebAppAuthentication(options =>

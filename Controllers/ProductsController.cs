@@ -1,5 +1,6 @@
 ﻿using IcSMP.Models;
 using IcSMP.Repositories;
+using IcSMP.Services;
 using IcSMP.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -13,12 +14,17 @@ namespace IcSMP.Controllers
         private readonly ProductsRepository _productsRepository;
         private readonly SuppliersRepository _suppliersRepository;
         private readonly CategoriesRepository _categoriesRepository;
+        private readonly IMethodsCalculation _methodsCalculation;
 
-        public ProductsController(ProductsRepository productsRepository,SuppliersRepository suppliersRepository , CategoriesRepository categoriesRepository)
+        public ProductsController(ProductsRepository productsRepository,
+            SuppliersRepository suppliersRepository , 
+            CategoriesRepository categoriesRepository,
+            IMethodsCalculation methodsCalculation)
         {
             _productsRepository = productsRepository;
             _suppliersRepository = suppliersRepository;
             _categoriesRepository = categoriesRepository;
+            _methodsCalculation = methodsCalculation;
         }
 
         //VIEW SECTION
@@ -27,25 +33,30 @@ namespace IcSMP.Controllers
             var products = _productsRepository.GetProducts();
             var supplier = _suppliersRepository.GetSuppliers();
             var category = _categoriesRepository.GetCategories();
+            var methodCalculation = _methodsCalculation.CalculateVat;
 
             var productViewList = new List<ProductViewModel>();
 
             foreach(var product in products)
             {
                 var productViewModel = new ProductViewModel()
+
                 {
-                    Id = product.Id,
-                    Category = category?.Where(c => c.Id == product.CategoryId).Select(c => c.Name).FirstOrDefault(),
+                    Id = product.Id,                   
                     BuyPrice = product.BuyPrice,
                     Caen = product.Caen,
+                    Buc = product.Buc,
                     Description = product.Description,
                     Name = product.Name,
                     ProductNumber = product.ProductNumber,
                     SellPrice = product.SellPrice,
-                    SellPriceVat    = product.SellPriceVat,
+                    SellPriceVat = _methodsCalculation.CalculateVat(product.SellPrice),
+                    //SellPriceVat = (product.SellPrice * 19 / 100) + product.SellPrice,
                     Supplier = supplier?.Where(c => c.Id == product.SupplierId).Select(c => c.CompanyName).FirstOrDefault(),
+                    Category = category?.Where(c => c.Id == product.CategoryId).Select(c => c.Name).FirstOrDefault(),
                     SupplierId = product.SupplierId,
                     CategoryId = product.CategoryId,
+                   
                 };
 
                 productViewList.Add(productViewModel);

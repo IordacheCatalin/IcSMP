@@ -10,7 +10,7 @@ namespace IcSMP.ViewModels
 
         public int ProductNumber { get; set; }
 
-        public int Caen { get; set; }
+        public long Caen { get; set; }
 
         public string Description { get; set; }
 
@@ -27,6 +27,8 @@ namespace IcSMP.ViewModels
         public decimal SellPrice { get; set; }
 
         public decimal SellPriceVat { get; set; }
+
+        public int Buc { get; set; }
 
     }
 }
