@@ -6,10 +6,17 @@
 }
 <div class="data-container">
     <h1>Categories</h1>
-    <a asp-action="Create" class="btn-custom create-btn">
-        <i class="fa-regular fa-square-plus"></i>
-        Create New
-    </a>
+    <div class="d-flex justify-content-between text-center">
+        <a asp-action="Create" class="btn-custom create-btn col-md-8">
+            <i class="fa-regular fa-square-plus"></i>
+            Create New
+        </a>
+
+        <div class="col-md-4 search-container">
+            <input id="searchInput" type="text" placeholder="Search...">
+            <i class="fa fa-search"></i>
+        </div>
+    </div>
 
     <table class="table">
         <thead>

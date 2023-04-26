@@ -34,3 +34,43 @@ body {
   ::-webkit-scrollbar-thumb:hover {
         background: #00343e;
     }
+
+/*Search - section*/
+.search-container {
+    position: relative;
+    display: inline-block;
+    border: 2px solid black;
+    margin-right: 50px;
+    border-radius: 6px;
+}
+
+    .search-container:hover {
+        border: 2px solid rgba(84, 161, 180, 1);
+        transition: 0.2s;
+        transition-timing-function: ease-in-out;
+        box-shadow: rgba(84, 161, 180, 1) 0px 0px 0px 1px, rgba(84, 161, 180, 1) 0px 4px 6px -1px, rgba(84, 161, 180, 1) 0px 1px 0px inset;
+    }
+
+    .search-container input[type="text"] {
+        width: 100%;
+        padding: 5px 1px 0px 35px;
+        border: none;
+        font-size: 14px;
+        color: black;
+    }
+
+    .search-container i {
+        position: absolute;
+        top: 6px;
+        left: 10px;
+        font-size: 18px;
+        color: #0591af;
+    }
+
+    .search-container:hover i {
+        color: black;
+    }
+
+    .search-container input[type="text"]:focus {
+        outline: none;
+    }

@@ -7,12 +7,10 @@ namespace IcSMP.Services
 {
     public class MethodsCalculation : IMethodsCalculation
     {
-        private readonly ProductsRepository _productsRepository;
         public readonly IcSMPDataContext _context;
 
-        public MethodsCalculation(ProductsRepository productsRepository,IcSMPDataContext context)
+        public MethodsCalculation(IcSMPDataContext context)
         {
-            _productsRepository = productsRepository;
             _context = context;
         }
 

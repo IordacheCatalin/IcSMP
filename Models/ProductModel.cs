@@ -19,10 +19,10 @@ namespace IcSMP.Models
         public long Caen { get; set; }
 
         public string Description { get; set; }
-
+        [DisplayName("Supplier")]
         public int SupplierId { get; set; }
 
-    
+        [DisplayName("Category")]
         public int CategoryId { get; set; }
 
         public decimal BuyPrice { get; set; }
