@@ -56,7 +56,13 @@ namespace IcSMP.Controllers
                     Category = category?.Where(c => c.Id == product.CategoryId).Select(c => c.Name).FirstOrDefault(),
                     SupplierId = product.SupplierId,
                     CategoryId = product.CategoryId,
-                   
+                    TotalBuy = _methodsCalculation.calculateTotalBuy(product.BuyPrice, product.Buc), /*Total buy = suma tuturor preturilor de intrare ori nr de buc */
+                    //Vat = product.Vat, 
+                    //TotalSell = product.TotalSell, /*Total sell = Suma tuturor preturilor de vanzare fara tva ori nr de buc */
+                    //TotalSellWhitVat = product.TotalSellWhitVat, /*Total sell whit vat = Suma tuturor preturilor de vanzare cu tva ori nr de buc */
+                    //TotalBuyItem = product.TotalBuyItem, /*Total buy item = Pretul de intrare* nr de buc*/
+                    //Total_Sell_Item = product.Total_Sell_Item,  /*Total sell item = Pretul de vanzare fara tva * nr de buc*/
+                    //Total_Sell_Whit_Vat_Item = product.Total_Sell_Whit_Vat_Item /*Total sell whit vat item = Pretul de vanzare cu tva * nr de buc*/
                 };
 
                 productViewList.Add(productViewModel);

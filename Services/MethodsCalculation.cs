@@ -20,5 +20,11 @@ namespace IcSMP.Services
             decimal sellPriceWhitVat = sellPrice + vat;
             return sellPriceWhitVat;
         }
+
+        public decimal calculateTotalBuy(decimal buyprice, int buc)
+        {
+            decimal totalbuy = buc * buyprice;
+            return totalbuy;
+        }
     }
 }

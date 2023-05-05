@@ -45,10 +45,11 @@ body {
 }
 
     .search-container:hover {
-        border: 2px solid rgba(84, 161, 180, 1);
-        transition: 0.2s;
-        transition-timing-function: ease-in-out;
-        box-shadow: rgba(84, 161, 180, 1) 0px 0px 0px 1px, rgba(84, 161, 180, 1) 0px 4px 6px -1px, rgba(84, 161, 180, 1) 0px 1px 0px inset;
+        border: 2px solid #0591af;
+        transition: 0.4s;
+        color: #0591AF;
+        box-shadow: rgba(5, 145, 175, 0.3) 0px 0px 0px 3px;
+        border-radius: 6px;
     }
 
     .search-container input[type="text"] {
