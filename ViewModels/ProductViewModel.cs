@@ -30,25 +30,26 @@ namespace IcSMP.ViewModels
         public decimal SellPriceVat { get; set; }
 
         public int Buc { get; set; }
-
-        [DisplayName("Total buy price")]
+        public decimal Vat { get; set; }
+        //[DisplayName("Total buy price")]
         public decimal TotalBuy { get; set; }
 
-        //public decimal Vat { get; set; }
-
         //[DisplayName("Total sell price")]
-        //public decimal TotalSell { get; set; }
+        public decimal TotalSell { get; set; }
 
         //[DisplayName("Total sell price + vat")]
-        //public decimal TotalSellWhitVat { get; set; }
-        //[DisplayName("Total buy buc * buy price")]
-        //public decimal TotalBuyItem { get; set; }
+        public decimal TotalSellWhitVat { get; set; }
 
         //[DisplayName("Total sell buc * sell price whit vat")]
-        //public decimal Total_Sell_Whit_Vat_Item { get; set; }
+        public decimal Total_Sell_Whit_Vat_Item { get; set; }
 
         //[DisplayName("Total sell buc * sell price ")]
-        //public decimal Total_Sell_Item { get; set; }
+        public decimal Total_Sell_Item { get; set; }
 
+        //[DisplayName("Total buy buc * buy price")]
+        public decimal TotalBuyItem { get; set; }
+        public decimal Buy_Price_Whit_Vat { get; set; }
+        public decimal Total_Buy_Whit_Vat { get; set; }
+        public decimal Total_Buy_Whit_Vat_Item { get; set; }
     }
 }

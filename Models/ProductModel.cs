@@ -10,21 +10,21 @@ namespace IcSMP.Models
         [Key]
         public int Id { get; set; }
         [StringLength(50, ErrorMessage = "Maximum number of characters is 50!")]
-        public string Name { get; set; }
-        
+        public string? Name { get; set; }
+
         public int ProductNumber { get; set; }
         [DisplayName("Caen Code")]
         [Required(ErrorMessage = "Square Feet is Required")]
         //[Range(0, int.MaxValue, ErrorMessage = "Square Feet must be a positive number")]
         public long Caen { get; set; }
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
         [DisplayName("Supplier")]
         public int SupplierId { get; set; }
 
         [DisplayName("Category")]
         public int CategoryId { get; set; }
-
+        //[DisplayName("Buy Price - VAT")]
         public decimal BuyPrice { get; set; }
 
         public decimal SellPrice { get; set; }
@@ -32,25 +32,27 @@ namespace IcSMP.Models
         public decimal SellPriceVat { get; set; }
 
         public int Buc { get; set; }
-        [DisplayName("Total buy price")]
+        public decimal Vat { get; set; }
+        //[DisplayName("Total buy price")]
         public decimal TotalBuy { get; set; }
 
-        //public decimal Vat { get; set; }
-
         //[DisplayName("Total sell price")]
-        //public decimal TotalSell { get; set; }
+        public decimal TotalSell { get; set; }
 
         //[DisplayName("Total sell price + vat")]
-        //public decimal TotalSellWhitVat { get; set; }
-        //[DisplayName("Total buy buc * buy price")]
-        //public decimal TotalBuyItem { get; set; }
+        public decimal TotalSellWhitVat { get; set; }
 
         //[DisplayName("Total sell buc * sell price whit vat")]
-        //public decimal Total_Sell_Whit_Vat_Item { get; set; }
+        public decimal Total_Sell_Whit_Vat_Item { get; set; }
 
         //[DisplayName("Total sell buc * sell price ")]
-        //public decimal Total_Sell_Item { get; set; }
+        public decimal Total_Sell_Item { get; set; }
 
+        //[DisplayName("Total buy buc * buy price")]
+        public decimal TotalBuyItem { get; set; }
+        public decimal Buy_Price_Whit_Vat { get; set; }
+        public decimal Total_Buy_Whit_Vat { get; set; }
+        public decimal Total_Buy_Whit_Vat_Item { get; set; }
 
     }
 }

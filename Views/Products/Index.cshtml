@@ -10,10 +10,9 @@
     <h1>Products</h1>
     <div class="d-flex justify-content-between text-center">
         <a asp-action="Create" class="btn-custom create-btn col-md-8">
-        <i class="fa-regular fa-square-plus"></i>
-        Create New
-    </a>
-               
+            <i class="fa-regular fa-square-plus"></i>
+            Create New
+        </a>
         <div class="col-md-4 search-container">
             <input id="searchInput" type="text" placeholder="Search...">
             <i class="fa fa-search"></i>
@@ -46,7 +45,7 @@
                     </span>
                     <span class="hide-600px">
                         @Html.DisplayNameFor(model => model.Supplier)
-                    </span>                                      
+                    </span>
                 </th>
                 <th>
                     <span class="display-none">
@@ -54,18 +53,32 @@
                     </span>
                     <span class="hide-600px">
                         @Html.DisplayNameFor(model => model.Category)
-                    </span>                                       
+                    </span>
                 </th>
                 <th class="hide-600px">
-                    @Html.DisplayNameFor(model => model.BuyPrice)
+                    @Html.DisplayNameFor(model => model.BuyPrice) @*Pret intrare fara TVA*@
+                </th>
+                <th class="hide-600px">
+                    @Html.DisplayNameFor(model => model.Buy_Price_Whit_Vat)  @*Pret intrare cu TVA*@
+                </th>
+                <th class="hide-600px">
+                    @Html.DisplayNameFor(model => model.Total_Buy_Whit_Vat_Item) @*Pretul de intrare cu tva * nr de buc / pe unitate*@
+                </th>
+                <th class="hide-600px">
+                    @Html.DisplayNameFor(model => model.TotalBuyItem) @*Pretul de intrare fara tva * nr de buc / pe unitate*@
+                </th>
+                <th class="hide-600px">
+                    @Html.DisplayNameFor(model => model.TotalBuy) @*Suma tuturor preturilor de intrare fara TVA*@
+                </th>
+                <th class="hide-600px">
+                    @Html.DisplayNameFor(model => model.Total_Buy_Whit_Vat) @*Suma tuturor preturilor de intrare cu TVA*@
                 </th>
                 <th class="hide-1350px">
                     @Html.DisplayNameFor(model => model.SellPrice)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.SellPriceVat)
-                </th>
-                <th></th>
+                </th>                
             </tr>
         </thead>
         <tbody class="table-reverse">
@@ -96,7 +109,7 @@
                         </span>
                         <span class="hide-600px">
                             @Html.DisplayFor(modelItem => item.Supplier)
-                        </span>                                                       
+                        </span>
                     </td>
                     <td>
                         <span class="display-none">
@@ -104,17 +117,32 @@
                         </span>
                         <span class="hide-600px">
                             @Html.DisplayFor(modelItem => item.Category)
-                        </span>                                     
+                        </span>
                     </td>
                     <td class="hide-600px">
-                        @Html.DisplayFor(modelItem => item.BuyPrice)
+                        @Html.DisplayFor(modelItem => item.BuyPrice) @*Pret intrare fara TVA*@
+                    </td>
+                    <td class="hide-600px">
+                        @Html.DisplayFor(modelItem => item.Buy_Price_Whit_Vat) @*Pret intrare cu TVA*@
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Total_Buy_Whit_Vat_Item) @*Pretul de intrare cu tva * nr de buc / pe unitate*@
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalBuyItem) @*Pretul de intrare fara tva * nr de buc / pe unitate*@
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalBuy) @*Suma tuturor preturilor de intrare fara TVA*@
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Total_Buy_Whit_Vat) @*Suma tuturor preturilor de intrare cu TVA*@
                     </td>
                     <td class="hide-1350px">
                         @Html.DisplayFor(modelItem => item.SellPrice)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.SellPriceVat)
-                    </td>
+                    </td>                   
                     <td class="action-link-space">
                         <span class="action-icon-hover">
                             <i class="fa-solid fa-pen-to-square action-icon"></i>

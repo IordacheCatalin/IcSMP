@@ -4,6 +4,7 @@ using IcSMP.Services;
 using IcSMP.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using NuGet.Protocol.Core.Types;
 using System.Collections.Generic;
 
@@ -33,36 +34,79 @@ namespace IcSMP.Controllers
             var products = _productsRepository.GetProducts();
             var supplier = _suppliersRepository.GetSuppliers();
             var category = _categoriesRepository.GetCategories();
-            var methodCalculation = _methodsCalculation.CalculateVat;
+
+
+
+            var calculatePriceWithoutVat = _methodsCalculation.calculatePriceWithoutVat;
+            var calculateTotal_Sell = _methodsCalculation.calculateTotal_Sell;
+            var calculateVat = _methodsCalculation.calculateVat;
+
+
+
+
+            var calculateSumOfColumn_Total_Buy_Whit_Vat_Item = _productsRepository.CalculateAndSave("Buc" , "Buy_Price_Whit_Vat" , "Total_Buy_Whit_Vat_Item");
+            var calculateSumOfColumn_TotalBuyItem = _productsRepository.CalculateAndSave("Buc", "BuyPrice", "TotalBuyItem");
+            var calculateSumOfColumn_Total_Sell_Item = _productsRepository.CalculateAndSave("Buc", "SellPrice", "Total_Sell_Whit_Vat_Item");
+            var calculateSumOfColumn_Total_Sell_Whit_Vat_Item = _productsRepository.CalculateAndSave("Buc", "SellPriceVat", "TotalBuyItem");
+
+
+            var calculateSumOfColumn_TotalBuy = _productsRepository.CalculateColumnValueAndSave("TotalBuyItem", "TotalBuy");
+            var calculateSumOfColumn_Total_Buy_Whit_Vat = _productsRepository.CalculateColumnValueAndSave("Total_Buy_Whit_Vat_Item", "Total_Buy_Whit_Vat");
+            var calculateSumOfColumn_TotalSell = _productsRepository.CalculateColumnValueAndSave("Total_Sell_Item", "TotalSell");
+            var calculateSumOfColumn_TotalSellWhitVat = _productsRepository.CalculateColumnValueAndSave("Total_Sell_Whit_Vat_Item", "TotalSellWhitVat");
+
 
             var productViewList = new List<ProductViewModel>();
-
+            
             foreach(var product in products)
             {
                 var productViewModel = new ProductViewModel()
 
                 {
-                    Id = product.Id,                   
-                    BuyPrice = product.BuyPrice,
+                    Id = product.Id,
+                    Vat = calculateVat(product.Id, product.Buy_Price_Whit_Vat, "Vat"),
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------      
+
                     Caen = product.Caen,
                     Buc = product.Buc,
                     Description = product.Description,
                     Name = product.Name,
                     ProductNumber = product.ProductNumber,
-                    SellPrice = product.SellPrice,
-                    SellPriceVat = _methodsCalculation.CalculateVat(product.SellPrice),
-                    //SellPriceVat = (product.SellPrice * 19 / 100) + product.SellPrice,
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
                     Supplier = supplier?.Where(c => c.Id == product.SupplierId).Select(c => c.CompanyName).FirstOrDefault(),
                     Category = category?.Where(c => c.Id == product.CategoryId).Select(c => c.Name).FirstOrDefault(),
                     SupplierId = product.SupplierId,
                     CategoryId = product.CategoryId,
-                    TotalBuy = _methodsCalculation.calculateTotalBuy(product.BuyPrice, product.Buc), /*Total buy = suma tuturor preturilor de intrare ori nr de buc */
-                    //Vat = product.Vat, 
-                    //TotalSell = product.TotalSell, /*Total sell = Suma tuturor preturilor de vanzare fara tva ori nr de buc */
-                    //TotalSellWhitVat = product.TotalSellWhitVat, /*Total sell whit vat = Suma tuturor preturilor de vanzare cu tva ori nr de buc */
-                    //TotalBuyItem = product.TotalBuyItem, /*Total buy item = Pretul de intrare* nr de buc*/
-                    //Total_Sell_Item = product.Total_Sell_Item,  /*Total sell item = Pretul de vanzare fara tva * nr de buc*/
-                    //Total_Sell_Whit_Vat_Item = product.Total_Sell_Whit_Vat_Item /*Total sell whit vat item = Pretul de vanzare cu tva * nr de buc*/
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                    BuyPrice = calculatePriceWithoutVat(product.Id , product.Buy_Price_Whit_Vat, "BuyPrice"), // ok
+                    
+                    Buy_Price_Whit_Vat = product.Buy_Price_Whit_Vat, // ok
+                    
+                    TotalBuyItem = product.TotalBuyItem, //ok
+
+                    Total_Buy_Whit_Vat_Item = product.Total_Buy_Whit_Vat_Item, //ok
+                    
+                    TotalBuy = product.TotalBuy,  //ok
+                    
+                    Total_Buy_Whit_Vat = product.Total_Buy_Whit_Vat ,
+                  
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                    SellPrice = calculatePriceWithoutVat(product.Id, product.SellPriceVat, "SellPrice"),
+                    
+                    SellPriceVat = product.SellPriceVat,
+
+
+                    Total_Sell_Item = product.Total_Sell_Item,  
+                    
+                    Total_Sell_Whit_Vat_Item = product.Total_Sell_Whit_Vat_Item,
+                    
+                    TotalSell = product.TotalSell, 
+                    
+                    TotalSellWhitVat = product.TotalSellWhitVat, 
+ //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 };
 
                 productViewList.Add(productViewModel);
