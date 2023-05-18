@@ -1,0 +1,55 @@
+﻿@using IcSMP.ViewModels;
+@model IEnumerable<ProductViewModel>
+
+@{
+    ViewData["Title"] = "Reports";
+    Layout = "";
+}
+
+<div class="data-container" style="flex-direction:row;flex-wrap:wrap;justify-content: center;">
+   
+    <div class="card text-black bg-info mb-2">
+        <div class="card-header">@Html.DisplayNameFor(model => model.TotalBuy)</div>
+        <div class="card-body">
+            @foreach (var item in Model)
+            {
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.TotalBuy) Ron</h5>
+            }
+            <p class="card-text"> Stock buy price without VAT</p>
+         </div>
+      </div>
+
+    <div class="card text-black bg-info mb-2">
+        <div class="card-header">@Html.DisplayNameFor(model => model.TotalSell)</div>
+        <div class="card-body">
+            @foreach (var item in Model)
+            {
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.TotalSell) Ron</h5>
+            }
+            <p class="card-text"> Stock sell price without VAT</p>
+        </div>
+    </div>
+
+    <div class="card text-black bg-warning mb-2">
+        <div class="card-header">@Html.DisplayNameFor(model => model.Total_Buy_Whit_Vat)</div>
+        <div class="card-body">
+            @foreach (var item in Model)
+            {
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Total_Buy_Whit_Vat) Ron</h5>
+            }
+            <p class="card-text"> Stock buy price with VAT</p>
+        </div>
+    </div>
+
+    <div class="card text-black bg-success mb-2">
+        <div class="card-header">@Html.DisplayNameFor(model => model.TotalSellWhitVat)</div>
+        <div class="card-body">
+            @foreach (var item in Model)
+            {
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.TotalSellWhitVat) Ron</h5>
+            }
+            <p class="card-text"> Stock sell price with VAT</p>
+        </div>
+    </div>
+   
+</div>

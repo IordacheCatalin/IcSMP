@@ -230,5 +230,11 @@
         .text-aboutus-page .olcards li .content .text {
             grid-area: text;
         }
+     
+       /* Reposts card*/
 
+.data-container .card {
+    width: 14rem;
+    max-height: 8rem;
+}
 
