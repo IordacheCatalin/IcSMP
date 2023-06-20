@@ -4,8 +4,9 @@
  }
 
 .create-btn {
-    max-width: 150px; 
-  }
+    width: 150px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
+}
 
 .puls {
     border-radius:6px;
@@ -84,5 +85,9 @@
     }
     .data-container {
         padding: 5px;
+    }
+    .data-container .card {
+        width: 12rem;
+        max-height: 10rem;
     }
 }

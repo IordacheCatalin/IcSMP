@@ -234,7 +234,39 @@
        /* Reposts card*/
 
 .data-container .card {
-    width: 14rem;
+    width: 16rem;
     max-height: 8rem;
 }
 
+.reportsPartialVeiwContainer {
+    max-height: 0;
+    transition: max-height 0.5s ease;
+    overflow: hidden;
+}
+
+    .reportsPartialVeiwContainer.ShowOn {
+        max-height: 50vh;
+        transition: max-height 1s ease;
+    }
+
+.button-search{
+    gap:20px;
+}
+
+.container-title{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+#datetime {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #0591af;
+    text-shadow: black 1px 1px 2px;
+}
+
+ #datetime::after {
+        content: attr(data-time);
+    }

@@ -23,6 +23,10 @@ namespace IcSMP.ViewModels
         public string Category { get; set; }
         public int CategoryId { get; set; }
 
+        public int BrandId { get; set; }
+        public string ? Brand { get; set; }
+       
+
         public decimal BuyPrice { get; set; }
 
         public decimal SellPrice { get; set; }
@@ -51,5 +55,6 @@ namespace IcSMP.ViewModels
         public decimal Buy_Price_Whit_Vat { get; set; }
         public decimal Total_Buy_Whit_Vat { get; set; }
         public decimal Total_Buy_Whit_Vat_Item { get; set; }
+        public DateTime BuyDate { get; set; }
     }
 }

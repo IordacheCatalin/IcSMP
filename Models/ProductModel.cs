@@ -24,6 +24,8 @@ namespace IcSMP.Models
 
         [DisplayName("Category")]
         public int CategoryId { get; set; }
+
+        public int BrandId { get; set; }
         //[DisplayName("Buy Price - VAT")]
         public decimal BuyPrice { get; set; }
 
@@ -53,6 +55,8 @@ namespace IcSMP.Models
         public decimal Buy_Price_Whit_Vat { get; set; }
         public decimal Total_Buy_Whit_Vat { get; set; }
         public decimal Total_Buy_Whit_Vat_Item { get; set; }
+
+        public DateTime BuyDate { get; set; }
 
     }
 }

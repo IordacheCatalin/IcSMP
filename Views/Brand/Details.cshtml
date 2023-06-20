@@ -1,13 +1,14 @@
-﻿@model IcSMP.Models.CategoryModel
+﻿@model IcSMP.Models.BrandModel
 
 @{
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="data-container">
-    <h1>Category Details</h1>
+    <h1>Brand Details</h1>
 
     <div>
+        <h4>BrandModel</h4>
         <hr />
         <dl class="row">
             <dt class="col-sm-2">
@@ -38,7 +39,6 @@
             <a asp-action="Index">@Html.ActionLink("Edit", "Edit", new { id = Model.Id })</a>
         </button>
     </div>
-
 </div>
 
 <style>

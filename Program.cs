@@ -19,6 +19,7 @@ builder.Services.AddTransient<ClientsRepository, ClientsRepository>();
 builder.Services.AddTransient<SuppliersRepository, SuppliersRepository>();
 builder.Services.AddTransient<CouriersRepository, CouriersRepository>();
 builder.Services.AddTransient<ProductsRepository, ProductsRepository>();
+builder.Services.AddTransient<BrandsRepository, BrandsRepository>();
 builder.Services.AddTransient<IMethodsCalculation, MethodsCalculation>();
 
 // Auth0 configuration

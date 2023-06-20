@@ -76,12 +76,12 @@ namespace IcSMP.Repositories
 
                         
 
-                        if (columnToSaveValue == 0)
-                        {
+                        //if (columnToSaveValue == 0)
+                        //{
                             columnToSaveValue = column1Value * column2Value;
                             // Save the result in another column
                             SaveToDatabase(id, columnToSaveValue , columnUpdateInDatabase);
-                        }
+                        //}
                     }
 
                     reader.Close();

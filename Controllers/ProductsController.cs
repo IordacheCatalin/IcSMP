@@ -15,17 +15,20 @@ namespace IcSMP.Controllers
         private readonly ProductsRepository _productsRepository;
         private readonly SuppliersRepository _suppliersRepository;
         private readonly CategoriesRepository _categoriesRepository;
+        private readonly BrandsRepository _brandsRepository;
         private readonly IMethodsCalculation _methodsCalculation;
 
         public ProductsController(ProductsRepository productsRepository,
             SuppliersRepository suppliersRepository , 
             CategoriesRepository categoriesRepository,
+            BrandsRepository brandsRepository ,
             IMethodsCalculation methodsCalculation)
         {
             _productsRepository = productsRepository;
             _suppliersRepository = suppliersRepository;
             _categoriesRepository = categoriesRepository;
             _methodsCalculation = methodsCalculation;
+            _brandsRepository = brandsRepository;
         }
 
         //VIEW SECTION
@@ -34,6 +37,8 @@ namespace IcSMP.Controllers
             var products = _productsRepository.GetProducts();
             var supplier = _suppliersRepository.GetSuppliers();
             var category = _categoriesRepository.GetCategories();
+            var brand = _brandsRepository.GetBrands();
+
 
 
 
@@ -46,8 +51,8 @@ namespace IcSMP.Controllers
 
             var calculateSumOfColumn_Total_Buy_Whit_Vat_Item = _productsRepository.CalculateAndSave("Buc" , "Buy_Price_Whit_Vat" , "Total_Buy_Whit_Vat_Item");
             var calculateSumOfColumn_TotalBuyItem = _productsRepository.CalculateAndSave("Buc", "BuyPrice", "TotalBuyItem");
-            var calculateSumOfColumn_Total_Sell_Item = _productsRepository.CalculateAndSave("Buc", "SellPrice", "Total_Sell_Whit_Vat_Item");
-            var calculateSumOfColumn_Total_Sell_Whit_Vat_Item = _productsRepository.CalculateAndSave("Buc", "SellPriceVat", "TotalBuyItem");
+            var calculateSumOfColumn_Total_Sell_Item = _productsRepository.CalculateAndSave("Buc", "SellPrice", "Total_Sell_Item");
+            var calculateSumOfColumn_Total_Sell_Whit_Vat_Item = _productsRepository.CalculateAndSave("Buc", "SellPriceVat", "Total_Sell_Whit_Vat_Item");
 
 
             var calculateSumOfColumn_TotalBuy = _productsRepository.CalculateColumnValueAndSave("TotalBuyItem", "TotalBuy");
@@ -76,9 +81,12 @@ namespace IcSMP.Controllers
 
                     Supplier = supplier?.Where(c => c.Id == product.SupplierId).Select(c => c.CompanyName).FirstOrDefault(),
                     Category = category?.Where(c => c.Id == product.CategoryId).Select(c => c.Name).FirstOrDefault(),
+                    Brand = brand?.Where(c => c.Id == product.BrandId).Select(c => c.Name).FirstOrDefault(),
                     SupplierId = product.SupplierId,
                     CategoryId = product.CategoryId,
-//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                    BrandId = product.BrandId,
+
+                    //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                     BuyPrice = calculatePriceWithoutVat(product.Id , product.Buy_Price_Whit_Vat, "BuyPrice"), // ok
                     
@@ -107,6 +115,8 @@ namespace IcSMP.Controllers
                     
                     TotalSellWhitVat = product.TotalSellWhitVat, 
  //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                    BuyDate = product.BuyDate,
                 };
 
                 productViewList.Add(productViewModel);
@@ -121,6 +131,7 @@ namespace IcSMP.Controllers
         {
             var supplier = _suppliersRepository.GetSuppliers();
             var category = _categoriesRepository.GetCategories();
+            var brand = _brandsRepository.GetBrands();
 
             //var categoryList = category.Select(c => new SelectListItem    ------ Varianta cu Select list
             // {
@@ -136,7 +147,7 @@ namespace IcSMP.Controllers
             //}).ToList();
 
             //ViewBag.data = supplierList;
-
+            ViewBag.dataBrand = brand;
             ViewBag.dataCategory = category;
             ViewBag.data = supplier;
             return View("Create");

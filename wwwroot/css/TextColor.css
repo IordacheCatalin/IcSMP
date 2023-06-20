@@ -60,7 +60,7 @@ color:white!important;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='2.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-.navbar-toggler:focus.{
+.navbar-toggler:focus{
     box-shadow:none!important;
 }
 
@@ -71,6 +71,7 @@ color:white!important;
     text-decoration: none;
     text-align: center;
     padding: 5px 0px 5px 0px;
+    cursor:pointer;
 }
 
     .btn-custom:hover {
@@ -201,13 +202,13 @@ input[type="checkbox"]:not(:checked) {
 }
 
 .data-container .card .card-header {
-    text-align:center;
     font-size: 16px;
     font-weight:700;
 }
 
 .data-container .card {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
+    text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
@@ -218,5 +219,14 @@ input[type="checkbox"]:not(:checked) {
     .container.login-start button a {
         color: white;
         font-size: 14px;
+    }
+
+    .search-container{
+        margin:0px;
+        width:320px;
+    }
+
+    .button-search {
+        justify-content: center;
     }
 }

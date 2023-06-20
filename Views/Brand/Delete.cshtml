@@ -1,13 +1,17 @@
-﻿@model IcSMP.Models.CategoryModel
+﻿@model IcSMP.Models.BrandModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Delete";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="data-container">
-    <h1>Category Details</h1>
 
+<div class="data-container">
+    <h1>Delete Category</h1>
+    <span class=""></span>
+
+    <h3>Are you sure you want to delete this?</h3>
     <div>
+        <h4>BrandModel</h4>
         <hr />
         <dl class="row">
             <dt class="col-sm-2">
@@ -29,16 +33,18 @@
                 @Html.DisplayFor(model => model.Description)
             </dd>
         </dl>
-    </div>
-    <div class="details-btn">
-        <button type="button" class="btn btn-primary">
-            <a asp-action="Index">Back to List</a>
-        </button>
-        <button type="button" class="btn btn-primary">
-            <a asp-action="Index">@Html.ActionLink("Edit", "Edit", new { id = Model.Id })</a>
-        </button>
-    </div>
 
+        <form asp-action="Delete">
+            <div class="details-btn">
+                <button type="submit" value="Delete" class="btn btn-danger">
+                    Delete
+                </button>
+                <button type="button" class="btn btn-primary">
+                    <a asp-action="Index">Back to List</a>
+                </button>
+            </div>
+        </form>
+    </div>
 </div>
 
 <style>

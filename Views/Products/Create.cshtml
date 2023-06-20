@@ -55,6 +55,18 @@
                     @Html.DropDownList("SupplierId", new SelectList(ViewBag.data, "Id" , "CompanyName"),new{ style = "width: -webkit-fill-available;"})
                     @*<select name="SupplierId" class="form-control" asp-items="@ViewBag.data"></select>*@ @*------ Varianta cu Select list*@
                 </div>
+                <div class="form-group viewBag-design">
+                    <label asp-for="BrandId" class="control-label"></label>
+                    @*<input asp-for="SupplierId" class="form-control" />
+                    <span asp-validation-for="SupplierId" class="text-danger"></span>*@
+                    @Html.DropDownList("BrandId", new SelectList(ViewBag.dataBrand, "Id" , "Name"),new{ style = "width: -webkit-fill-available;"})
+                    @*<select name="SupplierId" class="form-control" asp-items="@ViewBag.data"></select>*@ @*------ Varianta cu Select list*@
+                </div>
+                <div class="form-group">
+                    <label asp-for="BuyDate" class="control-label"></label>
+                    <input asp-for="BuyDate" class="form-control" />
+                    <span asp-validation-for="BuyDate" class="text-danger"></span>
+                </div>
                 <div class="form-group">
                     <label asp-for="Buy_Price_Whit_Vat" class="control-label"></label>
                     <input asp-for="Buy_Price_Whit_Vat" class="form-control" />

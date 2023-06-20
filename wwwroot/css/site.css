@@ -37,11 +37,14 @@ body {
 
 /*Search - section*/
 .search-container {
+    width:400px;
     position: relative;
     display: inline-block;
     border: 2px solid black;
-    margin-right: 50px;
+    margin-left: auto;
     border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
+    cursor:pointer;
 }
 
     .search-container:hover {
@@ -58,6 +61,7 @@ body {
         border: none;
         font-size: 14px;
         color: black;
+        cursor: pointer;
     }
 
     .search-container i {
